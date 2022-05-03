@@ -2,10 +2,10 @@ import React from "react";
 
 import { createStackNavigator } from "@react-navigation/stack";
 import { AppStackProps } from "../types";
-import Alarm from "../screens/alarm";
-import Clock from "../screens/clock";
 
-const AppStack = createStackNavigator<AppStackProps>() as any;
+import { Clock, Alarm } from "../screens";
+
+const AppStack = createStackNavigator<AppStackProps>();
 
 const Navigation = () => {
   return (
@@ -15,6 +15,7 @@ const Navigation = () => {
       }}
     >
       <AppStack.Screen name={"Clock"} component={Clock} />
+      <AppStack.Screen name={"Alarm"} component={Alarm} />
     </AppStack.Navigator>
   );
 };
